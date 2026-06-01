@@ -16,17 +16,6 @@ public class Veterinario {
         this.disponible = disponible;
     }
 
-    public Cita reservarCita(int citaId, Mascota mascota, LocalDate fecha) {
-        disponible = false;
-        return new Cita(citaId, mascota, this, fecha, "Pendiente", EstadoCita.PROGRAMADA);
-    }
-
-    public void diagnosticar(Cita cita, String diagnostico) {
-        cita.setDiagnostico(diagnostico);
-        cita.setEstado(EstadoCita.ATENDIDA);
-    }
-
-    
 
     public int getId() {
         return id;
