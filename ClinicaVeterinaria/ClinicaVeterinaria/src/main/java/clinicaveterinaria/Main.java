@@ -28,7 +28,7 @@ public class Main {
 
         Cita cita = reservaService.reservarCita(1, mascota, veterinario, LocalDate.now());
         diagnosticoService.diagnosticar(cita, "Paciente estable para tratamiento.");
-        Factura factura = facturacionService.generarFactura(1, cita, tratamiento.calcularCostoFinal());
+        Factura factura = facturacionService.generarFactura(1, cita, tratamiento.calcularCostoFinal(), LocalDate.now());
         factura.setPagada(true);
 
         System.out.println("=== ClinicaVeterinaria funcionando ===");

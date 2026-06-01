@@ -1,10 +1,10 @@
 package clinicaveterinaria.service;
 
+import java.time.LocalDate;
 import clinicaveterinaria.model.Cita;
 import clinicaveterinaria.model.Factura;
 import clinicaveterinaria.repository.BaseDatos;
 
-import java.time.LocalDate;
 
 public class FacturacionService {
     private final BaseDatos baseDatos;
@@ -13,8 +13,8 @@ public class FacturacionService {
         this.baseDatos = baseDatos;
     }
 
-    public Factura generarFactura(int id, Cita cita, double monto) {
-        Factura factura = new Factura(id, cita, monto, LocalDate.now(), false);
+    public Factura generarFactura(int id, Cita cita, double monto, LocalDate fecha) {
+        Factura factura = new Factura(id, cita, monto, fecha, false);
         baseDatos.getFacturas().add(factura);
         return factura;
     }

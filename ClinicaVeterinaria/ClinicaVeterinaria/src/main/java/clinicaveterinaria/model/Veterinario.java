@@ -26,14 +26,7 @@ public class Veterinario {
         cita.setEstado(EstadoCita.ATENDIDA);
     }
 
-    public Factura generarFactura(int facturaId, Cita cita, double monto, LocalDate fecha) {
-        return new Factura(facturaId, cita, monto, fecha, false);
-    }
-
-    public String crearReporte(Cita cita) {
-        return "Reporte: " + nombre + " atendio a " +
-                cita.getMascota().getNombre() + " con diagnostico " + cita.getDiagnostico();
-    }
+    
 
     public int getId() {
         return id;
