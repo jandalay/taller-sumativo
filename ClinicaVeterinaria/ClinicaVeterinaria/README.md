@@ -54,6 +54,15 @@ Una facil comprension de la que es algo, que en este caso son los modelos, y que
 Seguramente la clase ReporteService
 - Integrante 2: refactorizar OCP.
 - Integrante 3: refactorizar LSP.
-- Integrante 4: refactorizar ISP y DIP.
+- Integrante 4: Pichu Alay Jandry René
+refactorizar ISP y DIP.
+Preguntas de discusión:
+
+- ¿Qué problema causa una interfaz gigante en equipos grandes?
+Que la clase que implemente aquella interfaz tenga que implementar todos sus métodos.
+- ¿Por qué `new DirectoBaseDatos()` dificulta cambiar o probar la clase?
+Debido a que hay dos códigos que implementa un método propio de su clase DirectoBaseDatos, es decir, no existe aquel método desde la interfaz por lo que se hace Casting si se desea usar.
+- ¿Qué dependencia debería conocer el código de alto nivel: interfaz o clase concreta?
+interfaz porque se puede implementar varias interfaces en una misma clase.
 
 Lee `guia.md` para instrucciones, checklists y preguntas de discusión.
