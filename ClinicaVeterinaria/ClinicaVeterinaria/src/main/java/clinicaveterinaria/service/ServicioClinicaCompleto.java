@@ -1,5 +1,9 @@
 package clinicaveterinaria.service;
 
+import clinicaveterinaria.interfaces.ICitaService;
+import clinicaveterinaria.interfaces.IFacturaService;
+import clinicaveterinaria.interfaces.IMascotaService;
+import clinicaveterinaria.interfaces.IReporteService;
 import clinicaveterinaria.interfaces.IServicioClinica;
 import clinicaveterinaria.model.Cita;
 import clinicaveterinaria.model.Factura;
@@ -11,7 +15,7 @@ import clinicaveterinaria.repository.BaseDatos;
 import java.util.List;
 
 
-public class ServicioClinicaCompleto implements IServicioClinica {
+public class ServicioClinicaCompleto implements IServicioClinica, IMascotaService, ICitaService, IReporteService, IFacturaService {
     private final MascotaService mascotaService;
     private final VeterinarioCrudService veterinarioService;
     private final CitaService citaService;

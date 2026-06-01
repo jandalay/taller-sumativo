@@ -1,12 +1,17 @@
 package clinicaveterinaria.service;
 
 import clinicaveterinaria.repository.BaseDatos;
+import clinicaveterinaria.interfaces.IBaseDatos;
 
 
 public class GestorReportesClinica {
-    private final BaseDatos baseDatos = new BaseDatos();
+    private final IBaseDatos baseDatos;
+
+    public GestorReportesClinica( IBaseDatos baseDatos) {
+        this.baseDatos = baseDatos;
+    }
 
     public void imprimirResumenOperaciones() {
-        System.out.println("Resumen interno: " + baseDatos.getAuditoria());
+        System.out.println("Resumen interno: " + ((BaseDatos)baseDatos).getAuditoria());
     }
 }
