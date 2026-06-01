@@ -10,7 +10,7 @@ import clinicaveterinaria.model.Veterinario;
 import java.util.List;
 
 
-public class RecepcionService implements IServicioClinica {
+public class RecepcionService implements IServicioClinica, IMascotaService {
     private final ServicioClinicaCompleto servicioCompleto;
 
     public RecepcionService(ServicioClinicaCompleto servicioCompleto) {
