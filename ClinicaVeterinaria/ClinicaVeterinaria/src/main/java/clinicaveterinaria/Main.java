@@ -51,15 +51,14 @@ public class Main {
         veterinario.diagnosticar(citaDesdeModelo, "Ejemplo de SRP violado desde el modelo.");
         System.out.println(veterinario.crearReporte(citaDesdeModelo));
 
-        Pez pez = new Pez(3, "Nemo");
-        Perro perro = new Perro(4, "Firulais");
-        Pajaro pajaro = new Pajaro(5, "Piolin");
+        Pez pez = new Pez(3, "Gaby");
+        Perro perro = new Perro(4, "Balto");
+        Pajaro pajaro = new Pajaro(5, "Falco");
         pez.nadar();
         perro.caminar();
         pajaro.caminar();
         pajaro.volar();
 
-        System.out.println("El pez heredó caminar() y volar(), aunque no debe usarlos.");
         System.out.println("Tratamiento OCP violado pero funcional: " + tratamiento.obtenerIndicaciones());
     }
 }
