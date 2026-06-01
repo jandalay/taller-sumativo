@@ -112,7 +112,7 @@ public class MedicamentoTratamiento implements ITratamiento {
         return "Administrar segun receta.";
     }
 }
-## FISIOTERAPIA TRATAMIENTO 
+## FISIOTERAPIA TRATAMIENTO 1
 package clinicaveterinaria.model;
 
 import java.util.Objects;
