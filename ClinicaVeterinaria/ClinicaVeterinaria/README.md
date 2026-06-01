@@ -44,7 +44,14 @@ src/main/java/clinicaveterinaria/
 
 ## Trabajo del taller
 
-- Integrante 1: refactorizar SRP.
+- Integrante 1: refactorizar SRP
+Se eliminaor los metodos reservarcita, diagnosticar, generarrfactura y crearreporte de la clase Veterinario, en la clase Reservaservice se modifico el metodo reservarcita haciendo que pida tambien el veterinario que lo genera y se agrego el metodo crearreporte a la clase ReporteService, ademas se cambion el codigo del main que generaban conflicto.
+¿Cuántas razones para cambiar tenía `Veterinario` antes del refactoring?
+4, los metodos ya mencionados
+¿Qué ganamos al separar modelo y servicios?
+Una facil comprension de la que es algo, que en este caso son los modelos, y que se puede hacer con esos modelos
+¿Qué clase debería cambiar si mañana cambia el formato del reporte?
+Seguramente la clase ReporteService
 - Integrante 2: refactorizar OCP.
 - Integrante 3: refactorizar LSP.
 - Integrante 4: refactorizar ISP y DIP.
