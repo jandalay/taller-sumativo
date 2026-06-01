@@ -2,8 +2,10 @@ package clinicaveterinaria.model;
 
 import java.util.Objects;
 
+import clinicaveterinaria.interfaces.ITratamiento;
 
-public class Tratamiento {
+
+public class Tratamiento implements ITratamiento {
     private int id;
     private TipoTratamiento tipo;
     private String descripcion;
@@ -16,31 +18,7 @@ public class Tratamiento {
         this.costo = costo;
     }
 
-    public double calcularCostoFinal() {
-        if (tipo == TipoTratamiento.VACUNA) {
-            return costo + 5.0;
-        } else if (tipo == TipoTratamiento.CIRUGIA) {
-            return costo * 1.25 + 80.0;
-        } else if (tipo == TipoTratamiento.MEDICAMENTO) {
-            return costo * 1.10;
-        } else if (tipo == TipoTratamiento.FISIOTERAPIA) {
-            return costo * 0.95;
-        }
-        return costo;
-    }
 
-    public String obtenerIndicaciones() {
-        if (tipo == TipoTratamiento.VACUNA) {
-            return "Observar fiebre durante 24 horas.";
-        } else if (tipo == TipoTratamiento.CIRUGIA) {
-            return "Ayuno previo y control postoperatorio.";
-        } else if (tipo == TipoTratamiento.MEDICAMENTO) {
-            return "Administrar segun receta.";
-        } else if (tipo == TipoTratamiento.FISIOTERAPIA) {
-            return "Repetir sesiones dos veces por semana.";
-        }
-        return "Sin indicaciones.";
-    }
 
     public int getId() {
         return id;
@@ -72,6 +50,26 @@ public class Tratamiento {
 
     public void setCosto(double costo) {
         this.costo = costo;
+    }
+
+    @Override
+    public double calcularCostoFinal() {
+        return costo;
+    }
+
+    @Override
+    public double calcularCostoConImpuestos() {
+        return calcularCostoFinal();
+    }
+
+    @Override
+    public String obtenerIndicaciones() {
+        return descripcion;
+    }
+
+    @Override
+    public String obtenerPreparacionSala() {
+        return "Sin preparacion.";
     }
 
     @Override
